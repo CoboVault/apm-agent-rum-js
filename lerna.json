@@ -1,0 +1,27 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "registry": "https://registry.npmjs.org",
+  "command": {
+    "version": {
+      "allowBranch": ["master", "4.x"],
+      "conventionalCommits": true,
+      "message": "chore(release): publish",
+      "gitRemote": "upstream",
+      "loglevel": "verbose"
+    },
+    "run": {
+      "stream": true
+    },
+    "publish": {
+      "loglevel": "verbose"
+    }
+  },
+  "ignoreChanges": [
+    "**/*.md",
+    "**/test/**",
+    "docs"
+  ]
+}

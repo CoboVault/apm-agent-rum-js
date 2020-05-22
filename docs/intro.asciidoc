@@ -1,0 +1,38 @@
+[[intro]]
+== Introduction
+
+The Elastic APM Real User Monitoring (RUM) JavaScript Agent provides detailed performance metrics and error tracking of your web applications.
+It has built-in support for popular platforms and frameworks, and an API for custom instrumentation.
+
+The Agent also supports <<distributed-tracing-guide,distributed tracing>> for all outgoing requests.
+This enables you to analyze performance throughout your microservice architecture -- all in one view.
+
+[float]
+[[how-it-works]]
+=== How does the Agent work?
+
+The RUM Agent automatically instruments the following:
+
+* <<page-load-metrics,Page load metrics>>
+* Load time of Static Assets
+* API requests (XMLHttpRequest and Fetch)
+
+The agent uses the https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API[Navigation Timing API]
+and https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API[Resource Timing API]
+available in the browser to instrument the page load performance and static assets load times.
+
+The agent automatically captures all outgoing http requests,
+by instrumenting both XHR and Fetch API requests from the webpage to backend servers.
+
+For all transactions, the agent automatically captures <<breakdown-metrics-docs, breakdown metrics>>.
+
+
+[float]
+[[additional-components]]
+=== Additional Components
+
+APM Agents work in conjunction with the {apm-server-ref-v}/index.html[APM Server], {ref}/index.html[Elasticsearch], and {kibana-ref}/index.html[Kibana].
+The {apm-overview-ref-v}/index.html[APM Overview] provides details on how these components work together,
+and provides a matrix outlining {apm-overview-ref-v}/agent-server-compatibility.html[Agent and Server compatibility].
+
+include::./set-up.asciidoc[]

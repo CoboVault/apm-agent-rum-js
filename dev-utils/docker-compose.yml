@@ -1,0 +1,190 @@
+version: "2.1"
+services:
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-XX:UseAVX=2 -Xms1g -Xmx1g"
+      - "cluster.routing.allocation.disk.threshold_enabled=false"
+      - "discovery.type=single-node"
+      - "path.data=/usr/share/elasticsearch/data/${STACK_VERSION}"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 2000m
+#    cpus: 0.5
+    logging:
+      driver: 'json-file'
+      options:
+          max-size: '2m'
+          max-file: '5'
+    ports:
+      - "127.0.0.1:${ELASTICSEARCH_PORT:-9200}:9200"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -vq '\"status\":\"red\"'"]
+      retries: 10
+      interval: 20s
+    networks:
+      apm:
+        aliases:
+          - elasticsearch
+
+  apm-server:
+    container_name: apm-server
+    image: docker.elastic.co/apm/apm-server:${STACK_VERSION}
+    ports:
+      - "127.0.0.1:${APM_SERVER_PORT:-8200}:8200"
+    command: >
+      apm-server -e
+        -E apm-server.rum.enabled=true
+        -E apm-server.rum.rate_limit=100000
+        -E apm-server.host=0.0.0.0:8200
+        -E apm-server.read_timeout=1m
+        -E apm-server.shutdown_timeout=2m
+        -E apm-server.write_timeout=1m
+        -E apm-server.kibana.enabled=true
+        -E apm-server.kibana.host=http://kibana:5601
+        -E setup.template.settings.index.number_of_replicas=0
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETGID
+      - SETUID
+    logging:
+      driver: 'json-file'
+      options:
+          max-size: '2m'
+          max-file: '5'
+    mem_limit: 1000m
+#    cpus: 0.5
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+      kibana:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "--write-out", "'HTTP %{http_code}'", "--silent", "--output", "/dev/null", "http://apm-server:8200/"]
+      retries: 10
+      interval: 10s
+    networks:
+      apm:
+        aliases:
+          - apm-server
+
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:${STACK_VERSION}
+    environment:
+      SERVER_NAME: kibana.example.org
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    ports:
+      - "127.0.0.1:${KIBANA_PORT:-5601}:5601"
+    logging:
+      driver: 'json-file'
+      options:
+          max-size: '2m'
+          max-file: '5'
+    healthcheck:
+      test: ["CMD", "curl", "--write-out", "'HTTP %{http_code}'", "--silent", "--output", "/dev/null", "http://kibana:5601/"]
+      retries: 10
+      interval: 10s
+    mem_limit: 2000m
+#    cpus: 0.5
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    labels:
+      - "co.elatic.apm.stack-version=${STACK_VERSION}"
+    networks:
+      apm:
+        aliases:
+          - kibana
+
+  wait-for-apm-server:
+    container_name: wait-for-apm-server
+    image: alpine
+    command: >
+      /bin/sh -c exit 0
+    healthcheck:
+      test: ["CMD", "/bin/sh", "-c", "exit 0"]
+      retries: 10
+      interval: 10s
+    depends_on:
+      apm-server:
+        condition: service_healthy
+    networks:
+      apm:
+        aliases:
+          - wait-for-apm-server
+
+  node-puppeteer:
+    build: ../.ci/docker/node-puppeteer
+    container_name: node-puppeteer
+    image: docker.elastic.co/observability-ci/node-puppeteer:12
+    environment:
+      - HOME=/app
+      - SCOPE=${SCOPE}
+      - STACK_VERSION=${STACK_VERSION}
+      - APM_SERVER_URL=${APM_SERVER_URL}
+      - BUILD_NUMBER=${BUILD_NUMBER}
+      - BRANCH_NAME=${BRANCH_NAME}
+      - JENKINS_URL=${JENKINS_URL}
+      - SAUCE_USERNAME=${SAUCE_USERNAME}
+      - SAUCE_ACCESS_KEY=${SAUCE_ACCESS_KEY}
+      - MODE=${MODE}
+      - GOAL=${GOAL}
+      - WORKSPACE=${WORKSPACE}
+      - BASE_DIR=${BASE_DIR}
+    command: /run-test.sh
+    mem_limit: 2000m
+#    cpus: 0.5
+    depends_on:
+      apm-server:
+        condition: service_healthy
+    volumes:
+      - ..:/app
+    networks:
+      apm:
+        aliases:
+          - node-puppeteer
+    user: ${USER_ID}
+
+  node-benchmark:
+    build: ../.ci/docker/node-playwright
+    container_name: node-playwright
+    image: docker.elastic.co/observability-ci/node-playwright:12
+    environment:
+      - HOME=/app
+      - BUILD_NUMBER=${BUILD_NUMBER}
+      - BRANCH_NAME=${BRANCH_NAME}
+      - JENKINS_URL=${JENKINS_URL}
+      - REPORT_FILE=${REPORT_FILE}
+    command: >
+      /bin/bash -c "set -x
+        id
+        node --version
+        npm --version
+        npx --version
+        cd /app
+        export
+        npm install
+        npm install playwright --unsafe-perm=true --allow-root
+        set -eo pipefail
+        npx lerna run build:module
+        node ./scripts/benchmarks.js ${REPORT_FILE}"
+    mem_limit: 2000m
+    volumes:
+      - ..:/app
+    networks:
+      apm:
+        aliases:
+          - node-benchmark
+    user: ${USER_ID}
+
+networks:
+  apm:
