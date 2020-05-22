@@ -31,7 +31,7 @@ const releaseAssets = require('gh-release-assets')
 const { name, version } = require('../packages/rum/package.json')
 
 const BUILD_DIR = path.join(__dirname, '../packages/rum/dist/bundles')
-const GITHUB_URL = 'https://api.github.com/repos/elastic/apm-agent-rum-js'
+const GITHUB_URL = 'https://api.github.com/repos/CoboVault/apm-agent-rum-js'
 
 function createRelease(token) {
   const releaseUrl = `${GITHUB_URL}/releases`

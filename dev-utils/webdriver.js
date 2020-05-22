@@ -235,7 +235,7 @@ function getWebdriveBaseConfig(
 
 function isPageLoaded() {
   return browser.execute(() => {
-    return document.readyState === 'complete'
+    return document && document.readyState === 'complete'
   })
 }
 

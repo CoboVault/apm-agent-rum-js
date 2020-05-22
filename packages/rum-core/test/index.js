@@ -60,7 +60,7 @@ export function createCustomEvent(
     return new CustomEvent(event, params)
   }
 
-  const evt = document.createEvent('CustomEvent')
+  const evt = document && document.createEvent('CustomEvent')
   evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail)
   return evt
 }

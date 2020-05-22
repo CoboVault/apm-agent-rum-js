@@ -144,7 +144,7 @@ function getExternalContext(data) {
 export function getPageContext() {
   return {
     page: {
-      referer: document.referrer,
+      referer: document && document.referrer,
       url: window.location.href
     }
   }
@@ -172,7 +172,7 @@ export function addTransactionContext(
   // eslint-disable-next-line no-unused-vars
   { tags, ...configContext } = {}
 ) {
-  const pageContext = getPageContext()
+  const pageContext = {}
   let responseContext = {}
   if (transaction.type === PAGE_LOAD && isPerfTimelineSupported()) {
     let entries = PERF.getEntriesByType(NAVIGATION)

@@ -41,18 +41,21 @@ for (let i = 0; i < eventTypes.length; i++) {
 }
 
 function shouldInstrumentEvent(target, eventType, listenerFn) {
-  return (
-    target instanceof Element &&
-    eventTypes.indexOf(eventType) >= 0 &&
-    typeof listenerFn === 'function'
-  )
+  try {
+    return (
+      target instanceof Element &&
+      eventTypes.indexOf(eventType) >= 0 &&
+      typeof listenerFn === 'function'
+    )
+  } catch (e) {
+    return false
+  }
 }
 
 export function patchEventTarget(callback) {
   if (!window.EventTarget) {
     return
   }
-
   let proto = window.EventTarget.prototype
   const nativeAddEventListener = proto[ADD_EVENT_LISTENER_STR]
   const nativeRemoveEventListener = proto[REMOVE_EVENT_LISTENER_STR]

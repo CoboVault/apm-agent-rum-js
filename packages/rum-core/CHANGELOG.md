@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@elastic/apm-rum-core@5.3.0...@elastic/apm-rum-core@5.5.0) (2020-05-29)
+
+
+### Features
+
+* **dev:** modify repo config ([c89979e](https://github.com/CoboVault/apm-agent-rum-js/commit/c89979e78c2559d78319c7ecda84dcaef2126062))
+
+
+
+
+
+# [5.4.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@elastic/apm-rum-core@5.3.0...@elastic/apm-rum-core@5.4.0) (2020-05-28)
+
+
+### Features
+
+* **dev:** modify repo config ([c89979e](https://github.com/CoboVault/apm-agent-rum-js/commit/c89979e78c2559d78319c7ecda84dcaef2126062))
+
+
+
+
+
+# [5.3.0](https://github.com/elastic/apm-agent-rum-js/compare/@elastic/apm-rum-core@5.2.0...@elastic/apm-rum-core@5.3.0) (2020-05-22)
+
+
+### Bug Fixes
+
+* **rum-core:** add subtype span info without camelcasing ([#753](https://github.com/elastic/apm-agent-rum-js/issues/753)) ([8b97075](https://github.com/elastic/apm-agent-rum-js/commit/8b9707561f20ceb44caeb8ab6f6cf6cfe97e4f40))
+* **rum-core:** treat truncated spans as actual in breakdown ([#777](https://github.com/elastic/apm-agent-rum-js/issues/777)) ([93d8fc2](https://github.com/elastic/apm-agent-rum-js/commit/93d8fc2ff1b506aeeb7e4f6b7268f065922c21cc))
+
+
+### Features
+
+* **rum-core:** capture total blocking time for navigation ([#788](https://github.com/elastic/apm-agent-rum-js/issues/788)) ([a48980b](https://github.com/elastic/apm-agent-rum-js/commit/a48980b5819d92854923f9ebe5b89f2b28b25b61))
+* **rum-core:** support rn ([8b210aa](https://github.com/elastic/apm-agent-rum-js/commit/8b210aaa228b4115624b033a459b934ec191d6fc))
+
+
+### Performance Improvements
+
+* refactor ServiceFactory to use constant service names ([#764](https://github.com/elastic/apm-agent-rum-js/issues/764)) ([fdda235](https://github.com/elastic/apm-agent-rum-js/commit/fdda23555b418166727d85f143e84a16079d83e6)), closes [#238](https://github.com/elastic/apm-agent-rum-js/issues/238)
+* **rum-core:** compress server payload for all events ([#771](https://github.com/elastic/apm-agent-rum-js/issues/771)) ([5a3c604](https://github.com/elastic/apm-agent-rum-js/commit/5a3c6048482b47a9ac6ef565e88ff3eff786cabf))
+
+
+
+
+
 # [5.2.0](https://github.com/elastic/apm-agent-rum-js/compare/@elastic/apm-rum-core@5.1.0...@elastic/apm-rum-core@5.2.0) (2020-04-15)
 
 
