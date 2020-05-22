@@ -134,6 +134,8 @@ function checkSameOrigin(source, target) {
 }
 
 function isPlatformSupported() {
+  if (typeof global !== 'undefined' && typeof window === 'undefined')
+    window = global
   return (
     typeof window !== 'undefined' &&
     typeof Array.prototype.forEach === 'function' &&

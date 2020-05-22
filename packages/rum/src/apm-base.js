@@ -156,11 +156,7 @@ class ApmBase {
       })
     }
 
-    if (document.readyState === 'complete') {
-      sendPageLoadMetrics()
-    } else {
-      window.addEventListener('load', sendPageLoadMetrics)
-    }
+    window.addEventListener('load', sendPageLoadMetrics)
   }
 
   isEnabled() {
