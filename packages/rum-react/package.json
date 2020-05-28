@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elastic/apm-agent-rum-js.git",
+    "url": "https://github.com/CoboVault/apm-agent-rum-js.git",
     "directory": "packages/rum-react"
   },
   "scripts": {

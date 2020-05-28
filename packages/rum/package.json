@@ -8,7 +8,7 @@
   "types": "src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/elastic/apm-agent-rum-js.git",
+    "url": "https://github.com/CoboVault/apm-agent-rum-js.git",
     "directory": "packages/rum"
   },
   "publishConfig": {
