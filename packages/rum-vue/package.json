@@ -1,6 +1,6 @@
 {
   "name": "@elastic/apm-rum-vue",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Elastic APM Real User Monitoring for Vue applications",
   "keywords": [
     "elastic",
@@ -36,11 +36,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/CoboVault/apm-agent-rum-js.git",
-    "directory": "packages/rum-vue"
   },
   "bugs": {
     "url": "https://github.com/elastic/apm-agent-rum-js/issues"
