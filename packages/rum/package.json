@@ -1,6 +1,6 @@
 {
-  "name": "@elastic/apm-rum",
-  "version": "5.4.0",
+  "name": "@cobo/apm-rum",
+  "version": "0.0.1",
   "description": "Elastic APM JavaScript agent",
   "main": "dist/lib/index.js",
   "module": "dist/es/index.js",
@@ -41,7 +41,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@elastic/apm-rum-core": "file:../rum-core"
+    "@cobo/apm-rum-core": "file:../rum-core"
   },
   "bundlesize": [
     {
