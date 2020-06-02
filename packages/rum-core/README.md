@@ -1,3 +1,7 @@
+# Attention!!!
+This repo modified some rum-core code to support rum agent in React Native, still in development and test, please do not use it in your Production;
+
+
 # Elastic APM JavaScript core (for development)
 
 This is the core JavaScript module for Elastic APM. 
