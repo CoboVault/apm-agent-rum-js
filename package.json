@@ -5,7 +5,7 @@
   "description": "Elastic APM RUM agent",
   "repository": {
     "type": "git",
-    "url": "https://github.com/elastic/apm-agent-rum-js.git"
+    "url": "https://github.com/CoboVault/apm-agent-rum-js.git"
   },
   "scripts": {
     "version": "node scripts/prompt-release",

@@ -1,3 +1,7 @@
+# Attention!!!
+This repo modified some rum-core code to support rum agent in React Native, still in development and test, please do not use it in your Production;
+
+
 Elastic APM Real User Monitoring for Angular applications
 
 This package provides Real User Monitoring (RUM) for Angular applications.

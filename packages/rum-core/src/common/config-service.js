@@ -64,7 +64,9 @@ function getDataAttributesFromNode(node) {
 
 class Config {
   constructor() {
-    this.config = {}
+    this.config = {
+      context: {}
+    }
     this.defaults = {
       serviceName: '',
       serviceVersion: '',

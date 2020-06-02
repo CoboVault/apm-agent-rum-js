@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@elastic/apm-rum-react@1.2.0...@elastic/apm-rum-react@1.4.0) (2020-05-29)
+
+
+### Features
+
+* **dev:** modify repo config ([c89979e](https://github.com/CoboVault/apm-agent-rum-js/commit/c89979e78c2559d78319c7ecda84dcaef2126062))
+
+
+
+
+
+# [1.3.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@elastic/apm-rum-react@1.2.0...@elastic/apm-rum-react@1.3.0) (2020-05-28)
+
+
+### Features
+
+* **dev:** modify repo config ([c89979e](https://github.com/CoboVault/apm-agent-rum-js/commit/c89979e78c2559d78319c7ecda84dcaef2126062))
+
+
+
+
+
+# [1.2.0](https://github.com/elastic/apm-agent-rum-js/compare/@elastic/apm-rum-react@1.1.1...@elastic/apm-rum-react@1.2.0) (2020-05-22)
+
+
+### Features
+
+* **rum-core:** support rn ([8b210aa](https://github.com/elastic/apm-agent-rum-js/commit/8b210aaa228b4115624b033a459b934ec191d6fc))
+
+
+### Performance Improvements
+
+* refactor ServiceFactory to use constant service names ([#764](https://github.com/elastic/apm-agent-rum-js/issues/764)) ([fdda235](https://github.com/elastic/apm-agent-rum-js/commit/fdda23555b418166727d85f143e84a16079d83e6)), closes [#238](https://github.com/elastic/apm-agent-rum-js/issues/238)
+
+
+
+
+
 ## [1.1.1](https://github.com/elastic/apm-agent-rum-js/compare/@elastic/apm-rum-react@1.1.0...@elastic/apm-rum-react@1.1.1) (2020-04-15)
 
 
