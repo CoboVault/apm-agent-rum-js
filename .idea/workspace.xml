@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5fb2cd5-045a-42b4-a588-c7e7413ef065" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/rum-angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/rum-angular/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/rum-core/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/rum-core/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/rum-react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/rum-react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/rum-vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/rum-vue/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/rum/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/rum/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,9 +54,9 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="500" height="445" key="SwitcherDM" timestamp="1590724052079">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1591085553941">
       <screen x="0" y="23" width="1920" height="949" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1920.949@0.23.1920.949" timestamp="1590724052079" />
+    <state width="500" height="445" key="SwitcherDM/0.23.1920.949@0.23.1920.949" timestamp="1591085553941" />
   </component>
 </project>
