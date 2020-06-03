@@ -23,7 +23,7 @@
  *
  */
 
-const { version: agentVersion } = require('@elastic/apm-rum/package.json')
+const { version: agentVersion } = require('@cobo/apm-rum/package.json')
 
 module.exports = context => {
   return {

@@ -24,7 +24,7 @@
  */
 
 import bootstrap from './bootstrap'
-import { createServiceFactory } from '@elastic/apm-rum-core'
+import { createServiceFactory } from '@cobo/apm-rum-core'
 import ApmBase from './apm-base'
 
 const enabled = bootstrap()

@@ -24,7 +24,7 @@
  */
 
 import { init, apm, apmBase, ApmBase } from './index'
-import { createTracer as createElasticTracer } from '@elastic/apm-rum-core'
+import { createTracer as createElasticTracer } from '@cobo/apm-rum-core'
 
 function createTracer(apmBase) {
   return createElasticTracer(apmBase.serviceFactory)

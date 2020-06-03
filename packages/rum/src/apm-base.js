@@ -30,7 +30,7 @@ import {
   CONFIG_SERVICE,
   LOGGING_SERVICE,
   APM_SERVER
-} from '@elastic/apm-rum-core'
+} from '@cobo/apm-rum-core'
 
 class ApmBase {
   constructor(serviceFactory, disable) {

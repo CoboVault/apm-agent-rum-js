@@ -23,7 +23,7 @@
  *
  */
 
-import { afterFrame } from '@elastic/apm-rum-core'
+import { afterFrame } from '@cobo/apm-rum-core'
 
 export function routeHooks(router, apm) {
   let transaction

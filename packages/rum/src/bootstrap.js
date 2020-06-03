@@ -23,7 +23,7 @@
  *
  */
 
-import { isPlatformSupported, patchAll } from '@elastic/apm-rum-core'
+import { isPlatformSupported, patchAll } from '@cobo/apm-rum-core'
 
 var alreadyBootstrap = false
 var enabled = false

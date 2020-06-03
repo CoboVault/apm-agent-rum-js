@@ -26,7 +26,7 @@
 import 'promise-polyfill/src/polyfill'
 import { apmBase } from '@elastic/apm-rum'
 import { getGlobalConfig } from '../../../../dev-utils/test-config'
-import ApmServerMock from '@elastic/apm-rum-core/test/utils/apm-server-mock'
+import ApmServerMock from '@cobo/apm-rum-core/test/utils/apm-server-mock'
 
 const globalConfig = getGlobalConfig()
 

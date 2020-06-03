@@ -25,7 +25,7 @@
 
 import { Router, NavigationStart } from '@angular/router'
 import { Injectable } from '@angular/core'
-import { afterFrame } from '@elastic/apm-rum-core'
+import { afterFrame } from '@cobo/apm-rum-core'
 
 @Injectable({
   providedIn: 'root'

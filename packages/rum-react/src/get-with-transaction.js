@@ -25,7 +25,7 @@
 
 import React from 'react'
 import hoistStatics from 'hoist-non-react-statics'
-import { afterFrame } from '@elastic/apm-rum-core'
+import { afterFrame } from '@cobo/apm-rum-core'
 
 /**
  * Check if the given component is class based component

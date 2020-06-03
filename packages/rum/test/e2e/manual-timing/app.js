@@ -23,7 +23,7 @@
  *
  */
 
-import { PAGE_LOAD } from '@elastic/apm-rum-core'
+import { PAGE_LOAD } from '@cobo/apm-rum-core'
 import createApmBase from '../'
 import { renderTestElement } from '../utils'
 

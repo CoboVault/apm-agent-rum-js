@@ -83,7 +83,7 @@ module.exports = function(config) {
           }
         )
         console.log(
-          '@elastic/apm-rum-core benchmarks',
+          '@cobo/apm-rum-core benchmarks',
           JSON.stringify(summary, undefined, 2)
         )
         return { type: 'benchmarkjs', summary }

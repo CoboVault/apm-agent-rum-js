@@ -161,7 +161,7 @@ interface Labels {
 }
 
 /**
- * TODO: Will be imported from @elastic/apm-rum-core typings
+ * TODO: Will be imported from @cobo/apm-rum-core typings
  * once available
  */
 interface ServiceFactory {

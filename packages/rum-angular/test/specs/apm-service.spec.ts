@@ -34,7 +34,7 @@ import { Routes, Router } from '@angular/router'
 import { RouterTestingModule } from '@angular/router/testing'
 import { Location } from '@angular/common'
 import { ApmBase } from '@elastic/apm-rum'
-import { createServiceFactory } from '@elastic/apm-rum-core'
+import { createServiceFactory } from '@cobo/apm-rum-core'
 
 @Component({
   template: 'LazyHome'
