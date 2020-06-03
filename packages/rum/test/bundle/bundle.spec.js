@@ -73,7 +73,7 @@ describe('Browser bundle test', () => {
   })
 
   describe('main version', () => {
-    const mainEntry = require.resolve('@elastic/apm-rum/dist/lib/index.js')
+    const mainEntry = require.resolve('@cobo/apm-rum/dist/lib/index.js')
     it(
       'not produce any errors when run without babel',
       done => {
@@ -88,7 +88,7 @@ describe('Browser bundle test', () => {
   })
 
   describe('module version', () => {
-    const moduleEntry = require.resolve('@elastic/apm-rum/dist/es/index.js')
+    const moduleEntry = require.resolve('@cobo/apm-rum/dist/es/index.js')
     it(
       'not produce any errors when run without babel',
       done => {

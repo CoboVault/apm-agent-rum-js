@@ -30,7 +30,7 @@ import {
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing'
 import { ErrorHandler } from '@angular/core'
-import { ApmBase } from '@elastic/apm-rum'
+import { ApmBase } from '@cobo/apm-rum'
 import { createServiceFactory } from '@cobo/apm-rum-core'
 
 describe('ApmErrorHandler', () => {

@@ -35,7 +35,7 @@ import Adapter from 'enzyme-adapter-react-16'
 Enzyme.configure({ adapter: new Adapter() })
 
 import { MemoryRouter as Router, Route } from 'react-router-dom'
-import { ApmBase } from '@elastic/apm-rum'
+import { ApmBase } from '@cobo/apm-rum'
 import { createServiceFactory } from '@cobo/apm-rum-core'
 import { getApmRoute } from '../../src/get-apm-route'
 import { getGlobalConfig } from '../../../../dev-utils/test-config'

@@ -142,10 +142,19 @@ function getExternalContext(data) {
 }
 
 export function getPageContext() {
-  return {
-    page: {
-      referer: document && document.referrer,
-      url: window.location.href
+  if (document) {
+    return {
+      page: {
+        referer: document.referrer,
+        url: window.location.href
+      }
+    }
+  } else {
+    return {
+      page: {
+        referer: '',
+        url: ''
+      }
     }
   }
 }
@@ -172,7 +181,7 @@ export function addTransactionContext(
   // eslint-disable-next-line no-unused-vars
   { tags, ...configContext } = {}
 ) {
-  const pageContext = {}
+  const pageContext = getPageContext()
   let responseContext = {}
   if (transaction.type === PAGE_LOAD && isPerfTimelineSupported()) {
     let entries = PERF.getEntriesByType(NAVIGATION)

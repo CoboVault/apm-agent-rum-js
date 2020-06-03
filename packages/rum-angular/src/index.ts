@@ -23,7 +23,7 @@
  *
  */
 
-import { apm } from '@elastic/apm-rum'
+import { apm } from '@cobo/apm-rum'
 import { ApmService } from './apm-service'
 import { ApmErrorHandler } from './error-handler'
 

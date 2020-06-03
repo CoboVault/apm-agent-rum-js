@@ -80,7 +80,7 @@ const REPORTS_DIR = join(__dirname, '../../reports')
     const results = calculateResults(resultMap)
 
     console.log(
-      '@elastic/apm-rum benchmarks',
+      '@cobo/apm-rum benchmarks',
       JSON.stringify(results, undefined, 2)
     )
 

@@ -23,7 +23,7 @@
  *
  */
 
-import { apmBase } from '@elastic/apm-rum'
+import { apmBase } from '@cobo/apm-rum'
 import { routeHooks } from './route-hooks'
 import { getErrorHandler } from './error-handler'
 

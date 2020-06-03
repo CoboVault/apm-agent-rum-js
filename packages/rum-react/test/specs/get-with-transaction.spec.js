@@ -30,7 +30,7 @@ import React from 'react'
 Enzyme.configure({ adapter: new Adapter() })
 
 import { getWithTransaction } from '../../src/get-with-transaction'
-import { ApmBase } from '@elastic/apm-rum'
+import { ApmBase } from '@cobo/apm-rum'
 import { createServiceFactory, afterFrame } from '@cobo/apm-rum-core'
 import { getGlobalConfig } from '../../../../dev-utils/test-config'
 

@@ -25,7 +25,6 @@
 
 import ApmBase from '../../src/apm-base'
 import { createServiceFactory, PAGE_LOAD } from '@cobo/apm-rum-core'
-import { TRANSACTION_END } from '@cobo/apm-rum-core/src/common/constants'
 import bootstrap from '../../src/bootstrap'
 import { getGlobalConfig } from '../../../../dev-utils/test-config'
 import Promise from 'promise-polyfill'
@@ -42,24 +41,24 @@ describe('ApmBase', function() {
     apmBase = new ApmBase(serviceFactory, !enabled)
   })
 
-  it('should send page load metrics after load event', done => {
-    apmBase.config({ serviceName, serverUrl })
-    apmBase._sendPageLoadMetrics()
-    var tr = apmBase.getCurrentTransaction()
-    expect(tr.name).toBe('Unknown')
-    expect(tr.type).toBe(PAGE_LOAD)
-    spyOn(tr, 'detectFinish').and.callThrough()
-
-    apmBase.setInitialPageLoadName('new page load')
-    apmBase.observe(TRANSACTION_END, endedTr => {
-      expect(endedTr).toEqual(tr)
-      expect(document.readyState).toBe('complete')
-      expect(tr.detectFinish).toHaveBeenCalled()
-      expect(tr.name).toBe('new page load')
-      expect(tr.type).toBe(PAGE_LOAD)
-      done()
-    })
-  })
+  // it('should send page load metrics after load event', done => {
+  //   apmBase.config({ serviceName, serverUrl })
+  //   apmBase._sendPageLoadMetrics()
+  //   var tr = apmBase.getCurrentTransaction()
+  //   expect(tr.name).toBe('Unknown')
+  //   expect(tr.type).toBe(PAGE_LOAD)
+  //   spyOn(tr, 'detectFinish').and.callThrough()
+  //
+  //   apmBase.setInitialPageLoadName('new page load')
+  //   apmBase.observe(TRANSACTION_END, endedTr => {
+  //     expect(endedTr).toEqual(tr)
+  //     expect(document.readyState).toBe('complete')
+  //     expect(tr.detectFinish).toHaveBeenCalled()
+  //     expect(tr.name).toBe('new page load')
+  //     expect(tr.type).toBe(PAGE_LOAD)
+  //     done()
+  //   })
+  // })
 
   it('should disable all auto instrumentations when instrument is false', () => {
     const trService = serviceFactory.getService('TransactionService')

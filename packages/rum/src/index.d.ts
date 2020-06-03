@@ -23,7 +23,7 @@
  *
  */
 
-declare module '@elastic/apm-rum' {
+declare module '@cobo/apm-rum' {
   type Init = (options?: AgentConfigOptions) => ApmBase
   const init: Init
 

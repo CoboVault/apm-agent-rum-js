@@ -33,7 +33,7 @@ import { NgModule, Component } from '@angular/core'
 import { Routes, Router } from '@angular/router'
 import { RouterTestingModule } from '@angular/router/testing'
 import { Location } from '@angular/common'
-import { ApmBase } from '@elastic/apm-rum'
+import { ApmBase } from '@cobo/apm-rum'
 import { createServiceFactory } from '@cobo/apm-rum-core'
 
 @Component({

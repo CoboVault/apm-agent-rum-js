@@ -23,7 +23,7 @@
  *
  */
 
-import { ApmBase, init } from '@elastic/apm-rum'
+import { ApmBase, init } from '@cobo/apm-rum'
 
 const config: AgentConfigOptions = {
   active: true,

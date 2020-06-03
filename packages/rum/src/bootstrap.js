@@ -33,7 +33,8 @@ export default function bootstrap() {
     return enabled
   }
   alreadyBootstrap = true
-
+  if (typeof global !== 'undefined' && typeof window === 'undefined')
+    window = global
   if (isPlatformSupported()) {
     patchAll()
     enabled = true

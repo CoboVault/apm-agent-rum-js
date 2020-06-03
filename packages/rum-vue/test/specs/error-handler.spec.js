@@ -25,7 +25,7 @@
 
 import Vue from 'vue'
 import { mount } from '@vue/test-utils'
-import { ApmBase } from '@elastic/apm-rum'
+import { ApmBase } from '@cobo/apm-rum'
 import { createServiceFactory } from '@cobo/apm-rum-core'
 import { getErrorHandler } from '../../src/error-handler'
 

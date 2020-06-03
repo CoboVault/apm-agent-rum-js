@@ -23,8 +23,8 @@
  *
  */
 
-const elasticApm = require('@elastic/apm-rum')
-const { init: namedInit, apm, apmBase, ApmBase } = require('@elastic/apm-rum')
+const elasticApm = require('@cobo/apm-rum')
+const { init: namedInit, apm, apmBase, ApmBase } = require('@cobo/apm-rum')
 
 describe('apm base', () => {
   it('should have default and named exports', () => {
@@ -41,9 +41,9 @@ describe('apm base', () => {
     /**
      * Delete module cache and run bootstrap again
      */
-    delete require.cache[require.resolve('@elastic/apm-rum')]
-    delete require.cache[require.resolve('@elastic/apm-rum/dist/lib/bootstrap')]
-    require('@elastic/apm-rum')
+    delete require.cache[require.resolve('@cobo/apm-rum')]
+    delete require.cache[require.resolve('@cobo/apm-rum/dist/lib/bootstrap')]
+    require('@cobo/apm-rum')
 
     expect(console.log).not.toHaveBeenCalled()
   })

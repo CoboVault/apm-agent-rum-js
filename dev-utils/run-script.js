@@ -89,15 +89,15 @@ function runIntegrationTests() {
  * Ensure all the exports from our module works
  * in Node.js without babel transpiling the modules
  */
-function runNodeTests() {
-  const SPEC_DIR = 'test/node'
-  runJasmine(SPEC_DIR, err => {
-    if (err) {
-      console.log('Node tests for build failed:', err.message)
-      process.exit(2)
-    }
-  })
-}
+// function runNodeTests() {
+//   const SPEC_DIR = 'test/node'
+//   runJasmine(SPEC_DIR, err => {
+//     if (err) {
+//       console.log('Node tests for build failed:', err.message)
+//       process.exit(2)
+//     }
+//   })
+// }
 
 function runBundleTests() {
   const SPEC_DIR = 'test/bundle'
@@ -188,7 +188,7 @@ const scripts = {
   runSauceTests,
   runE2eTests,
   runIntegrationTests,
-  runNodeTests,
+  //runNodeTests,
   runBundleTests,
   buildE2eBundles,
   startTestServers: startServersWithCleanups
