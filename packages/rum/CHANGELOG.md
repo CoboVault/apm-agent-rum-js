@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@cobo/apm-rum@0.1.0...@cobo/apm-rum@0.2.0) (2020-07-01)
+
+
+### Features
+
+* **dev:** update version number ([62a66f0](https://github.com/CoboVault/apm-agent-rum-js/commit/62a66f0721103001511eb1a02e6e2e12164d077a))
+
+
+
+
+
 ## [0.1.1](https://github.com/CoboVault/apm-agent-rum-js/compare/@cobo/apm-rum@0.1.0...@cobo/apm-rum@0.1.1) (2020-07-01)
 
 **Note:** Version bump only for package @cobo/apm-rum
