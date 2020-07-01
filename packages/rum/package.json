@@ -51,5 +51,6 @@
       "path": "./dist/bundles/elastic-apm-opentracing*.min.js",
       "maxSize": "18kB"
     }
-  ]
+  ],
+  "gitHead": "a7d8c93db7a3fb659932e65a5feb7f43ec2fe010"
 }

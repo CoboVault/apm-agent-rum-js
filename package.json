@@ -170,9 +170,6 @@
   },
   "dependencies": {
     "@cobo/apm-rum": "file:packages/rum",
-    "@cobo/apm-rum-angular": "file:packages/rum-angular",
-    "@cobo/apm-rum-core": "file:packages/rum-core",
-    "@cobo/apm-rum-react": "file:packages/rum-react",
-    "@cobo/apm-rum-vue": "file:packages/rum-vue"
+    "@cobo/apm-rum-core": "file:packages/rum-core"
   }
 }
