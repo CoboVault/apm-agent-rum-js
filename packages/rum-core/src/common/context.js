@@ -142,19 +142,10 @@ function getExternalContext(data) {
 }
 
 export function getPageContext() {
-  if (document) {
-    return {
-      page: {
-        referer: document.referrer,
-        url: window.location.href
-      }
-    }
-  } else {
-    return {
-      page: {
-        referer: '',
-        url: ''
-      }
+  return {
+    page: {
+      referer: '',
+      url: ''
     }
   }
 }
