@@ -1,6 +1,6 @@
 {
   "name": "@cobo/apm-rum-vue",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Elastic APM Real User Monitoring for Vue applications",
   "keywords": [
     "elastic",
