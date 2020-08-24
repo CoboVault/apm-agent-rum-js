@@ -174,6 +174,8 @@
     "@elastic/apm-rum-angular": "file:packages/rum-angular",
     "@elastic/apm-rum-core": "file:packages/rum-core",
     "@elastic/apm-rum-react": "file:packages/rum-react",
+    "@elastic/apm-rum-react-native-core": "file:packages/rum-react-native-core",
+    "@elastic/apm-rum-react-native": "file:packages/rum-react-native",
     "@elastic/apm-rum-vue": "file:packages/rum-vue"
   }
 }
