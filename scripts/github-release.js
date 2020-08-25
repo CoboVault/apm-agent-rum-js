@@ -28,9 +28,12 @@ const url = require('url')
 const fs = require('fs')
 const https = require('https')
 const releaseAssets = require('gh-release-assets')
-const { name, version } = require('../packages/rum/package.json')
+const { name, version } = require('../packages/rum-react-native/package.json')
 
-const BUILD_DIR = path.join(__dirname, '../packages/rum/dist/bundles')
+const BUILD_DIR = path.join(
+  __dirname,
+  '../packages/rum-react-native/dist/bundles'
+)
 const GITHUB_URL = 'https://api.github.com/repos/elastic/apm-agent-rum-js'
 
 function createRelease(token) {
