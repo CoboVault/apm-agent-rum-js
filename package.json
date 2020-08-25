@@ -1,11 +1,11 @@
 {
-  "name": "elastic-apm-rum",
+  "name": "cobo-apm-rum",
   "private": true,
   "version": "0.0.0-monorepo",
-  "description": "Elastic APM RUM agent",
+  "description": "Cobo Elastic APM RUM agent used in react-native",
   "repository": {
     "type": "git",
-    "url": "https://github.com/elastic/apm-agent-rum-js.git"
+    "url": "https://github.com/CoboVault/apm-agent-rum-js.git"
   },
   "scripts": {
     "version": "node scripts/prompt-release",
@@ -17,7 +17,6 @@
     "lint": "run-p --silent lint:*",
     "lint:js": "eslint . --ext .js,.jsx,.ts",
     "lint:license": "node scripts/license-checker",
-    "test": "npm run build && lerna run test --scope=$SCOPE --no-prefix  --concurrency=1",
     "build": "lerna run build",
     "bundlesize": "lerna run build:module && lerna run bundlesize",
     "serve": "node ./dev-utils/run-script.js startTestServers",
@@ -170,12 +169,7 @@
     "zone.js": "^0.10.2"
   },
   "dependencies": {
-    "@elastic/apm-rum": "file:packages/rum",
-    "@elastic/apm-rum-angular": "file:packages/rum-angular",
-    "@elastic/apm-rum-core": "file:packages/rum-core",
-    "@elastic/apm-rum-react": "file:packages/rum-react",
-    "@elastic/apm-rum-react-native-core": "file:packages/rum-react-native-core",
-    "@elastic/apm-rum-react-native": "file:packages/rum-react-native",
-    "@elastic/apm-rum-vue": "file:packages/rum-vue"
+    "@cobo/apm-rum-react-native-core": "file:packages/rum-react-native-core",
+    "@cobo/apm-rum-react-native": "file:packages/rum-react-native"
   }
 }
