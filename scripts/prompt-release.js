@@ -35,10 +35,13 @@ const childProcess = require('@lerna/child-process')
       '--rule',
       '{"rulesdir/version-checker": "error"}',
       '--fix',
-      './packages/rum/src/apm-base.js'
+      './packages/rum-react-native/src/apm-base.js'
     ])
 
-    childProcess.execSync('git', ['add', './packages/rum/src/apm-base.js'])
+    childProcess.execSync('git', [
+      'add',
+      './packages/rum-react-native/src/apm-base.js'
+    ])
   } catch (err) {
     log.error(err)
   }
