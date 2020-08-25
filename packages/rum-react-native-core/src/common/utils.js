@@ -132,14 +132,8 @@ function checkSameOrigin(source, target) {
 }
 
 function isPlatformSupported() {
-  return (
-    isBrowser &&
-    typeof Set === 'function' &&
-    typeof JSON.stringify === 'function' &&
-    PERF &&
-    typeof PERF.now === 'function' &&
-    isCORSSupported()
-  )
+  const GLOBAL = global || window
+  return GLOBAL && GLOBAL.ReactNative && GLOBAL.ReactNative.NativeModules
 }
 
 /**
@@ -324,7 +318,7 @@ function getEarliestSpan(spans) {
 }
 
 function now() {
-  return PERF.now()
+  return Date.now()
 }
 
 function getTime(time) {

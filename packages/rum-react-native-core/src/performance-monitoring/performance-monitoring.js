@@ -274,7 +274,7 @@ export default class PerformanceMonitoring {
       }
       const isDtEnabled = configService.get('distributedTracing')
       const dtOrigins = configService.get('distributedTracingOrigins')
-      const currentUrl = new Url(window.location.href)
+      const currentUrl = new Url('/')
       const isSameOrigin =
         checkSameOrigin(requestUrl.origin, currentUrl.origin) ||
         checkSameOrigin(requestUrl.origin, dtOrigins)

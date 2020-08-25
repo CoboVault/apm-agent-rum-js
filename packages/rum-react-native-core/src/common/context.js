@@ -153,8 +153,8 @@ function getNavigationContext(data) {
 export function getPageContext() {
   return {
     page: {
-      referer: document.referrer,
-      url: location.href
+      referer: undefined,
+      url: undefined
     }
   }
 }

@@ -28,16 +28,9 @@ import {
   RESOURCE_INITIATOR_TYPES,
   MAX_SPAN_DURATION,
   USER_TIMING_THRESHOLD,
-  PAGE_LOAD,
-  RESOURCE,
-  MEASURE
+  PAGE_LOAD
 } from '../common/constants'
-import {
-  stripQueryStringFromUrl,
-  PERF,
-  isPerfTimelineSupported
-} from '../common/utils'
-import { state } from '../state'
+import { stripQueryStringFromUrl, PERF } from '../common/utils'
 
 /**
  * Navigation Timing Spans
@@ -344,27 +337,27 @@ function captureNavigation(transaction) {
     transaction.addMarks(getPageLoadMarks(timings))
   }
 
-  if (isPerfTimelineSupported()) {
-    const trStart = transaction._start
-    /**
-     * Capture resource timing information as spans
-     */
-    const resourceEntries = PERF.getEntriesByType(RESOURCE)
-    createResourceTimingSpans(
-      resourceEntries,
-      state.bootstrapTime,
-      trStart,
-      trEnd
-    ).forEach(span => transaction.spans.push(span))
-
-    /**
-     * Capture user timing measures as spans
-     */
-    const userEntries = PERF.getEntriesByType(MEASURE)
-    createUserTimingSpans(userEntries, trStart, trEnd).forEach(span =>
-      transaction.spans.push(span)
-    )
-  }
+  // if (isPerfTimelineSupported()) {
+  //   const trStart = transaction._start
+  //   /**
+  //    * Capture resource timing information as spans
+  //    */
+  //   const resourceEntries = PERF.getEntriesByType(RESOURCE)
+  //   createResourceTimingSpans(
+  //     resourceEntries,
+  //     state.bootstrapTime,
+  //     trStart,
+  //     trEnd
+  //   ).forEach(span => transaction.spans.push(span))
+  //
+  //   /**
+  //    * Capture user timing measures as spans
+  //    */
+  //   const userEntries = PERF.getEntriesByType(MEASURE)
+  //   createUserTimingSpans(userEntries, trStart, trEnd).forEach(span =>
+  //     transaction.spans.push(span)
+  //   )
+  // }
 }
 
 export {

@@ -31,7 +31,6 @@ let enabled = false
 export function bootstrap() {
   if (isPlatformSupported()) {
     patchAll()
-    bootstrapPerf()
     state.bootstrapTime = now()
     enabled = true
   } else if (isBrowser) {
@@ -43,20 +42,4 @@ export function bootstrap() {
   }
 
   return enabled
-}
-
-export function bootstrapPerf() {
-  if (document.visibilityState === 'hidden') {
-    state.lastHiddenStart = 0
-  }
-
-  window.addEventListener(
-    'visibilitychange',
-    () => {
-      if (document.visibilityState === 'hidden') {
-        state.lastHiddenStart = performance.now()
-      }
-    },
-    { capture: true }
-  )
 }

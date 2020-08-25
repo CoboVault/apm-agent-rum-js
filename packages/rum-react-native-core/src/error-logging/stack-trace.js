@@ -47,10 +47,10 @@ function cleanFilePath(filePath = '') {
   return filePath
 }
 
-function isFileInline(fileUrl) {
-  if (fileUrl) {
-    return window.location.href.indexOf(fileUrl) === 0
-  }
+function isFileInline() {
+  // if (fileUrl) {
+  //   return window.location.href.indexOf(fileUrl) === 0
+  // }
   return false
 }
 

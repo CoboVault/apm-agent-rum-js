@@ -25,11 +25,8 @@
 
 import {
   getInstrumentationFlags,
-  PAGE_LOAD,
-  ERROR,
   CONFIG_SERVICE,
-  LOGGING_SERVICE,
-  APM_SERVER
+  LOGGING_SERVICE
 } from '@elastic/apm-rum-react-native-core'
 
 export default class ApmBase {
@@ -72,22 +69,23 @@ export default class ApmBase {
         )
         performanceMonitoring.init(flags)
 
-        if (flags[ERROR]) {
-          const errorLogging = this.serviceFactory.getService('ErrorLogging')
-          errorLogging.registerListeners()
-        }
+        // if (flags[ERROR]) {
+        //   const errorLogging = this.serviceFactory.getService('ErrorLogging')
+        //   errorLogging.registerListeners()
+        // }
 
-        const sendPageLoad = () =>
-          flags[PAGE_LOAD] && this._sendPageLoadMetrics()
-
-        if (configService.get('centralConfig')) {
-          /**
-           * Waiting for the remote config before sending the page load transaction
-           */
-          this.fetchCentralConfig().then(sendPageLoad)
-        } else {
-          sendPageLoad()
-        }
+        // there is no pageLoad in react-native, maybe first time show screen.
+        // const sendPageLoad = () =>
+        //   flags[PAGE_LOAD] && this._sendPageLoadMetrics()
+        //
+        // if (configService.get('centralConfig')) {
+        //   /**
+        //    * Waiting for the remote config before sending the page load transaction
+        //    */
+        //   this.fetchCentralConfig().then(sendPageLoad)
+        // } else {
+        //   sendPageLoad()
+        // }
       } else {
         this._disable = true
         loggingService.warn('RUM agent is inactive')
@@ -101,70 +99,70 @@ export default class ApmBase {
    * if the internal config fetch fails the the promise resolves to `undefined` otherwise
    * it resolves to the fetched config.
    */
-  fetchCentralConfig() {
-    const [
-      apmServer,
-      loggingService,
-      configService
-    ] = this.serviceFactory.getService([
-      APM_SERVER,
-      LOGGING_SERVICE,
-      CONFIG_SERVICE
-    ])
-
-    return apmServer
-      .fetchConfig(
-        configService.get('serviceName'),
-        configService.get('environment')
-      )
-      .then(config => {
-        var transactionSampleRate = config['transaction_sample_rate']
-        if (transactionSampleRate) {
-          transactionSampleRate = Number(transactionSampleRate)
-          const config = { transactionSampleRate }
-          const { invalid } = configService.validate(config)
-          if (invalid.length === 0) {
-            configService.setConfig(config)
-          } else {
-            const { key, value, allowed } = invalid[0]
-            loggingService.warn(
-              `invalid value "${value}" for ${key}. Allowed: ${allowed}.`
-            )
-          }
-        }
-        return config
-      })
-      .catch(error => {
-        loggingService.warn('failed fetching config:', error)
-      })
-  }
-
-  _sendPageLoadMetrics() {
-    /**
-     * Name of the transaction is set in transaction service to
-     * avoid duplicating the logic at multiple places
-     */
-    const tr = this.startTransaction(undefined, PAGE_LOAD, {
-      managed: true,
-      canReuse: true
-    })
-
-    if (!tr) {
-      return
-    }
-
-    tr.addTask(PAGE_LOAD)
-    const sendPageLoadMetrics = () => {
-      // to make sure PerformanceTiming.loadEventEnd has a value
-      setTimeout(() => tr.removeTask(PAGE_LOAD))
-    }
-
-    if (document.readyState === 'complete') {
-      sendPageLoadMetrics()
-    } else {
-      window.addEventListener('load', sendPageLoadMetrics)
-    }
-  }
+  // fetchCentralConfig() {
+  //   const [
+  //     apmServer,
+  //     loggingService,
+  //     configService
+  //   ] = this.serviceFactory.getService([
+  //     APM_SERVER,
+  //     LOGGING_SERVICE,
+  //     CONFIG_SERVICE
+  //   ])
+  //
+  //   return apmServer
+  //     .fetchConfig(
+  //       configService.get('serviceName'),
+  //       configService.get('environment')
+  //     )
+  //     .then(config => {
+  //       var transactionSampleRate = config['transaction_sample_rate']
+  //       if (transactionSampleRate) {
+  //         transactionSampleRate = Number(transactionSampleRate)
+  //         const config = { transactionSampleRate }
+  //         const { invalid } = configService.validate(config)
+  //         if (invalid.length === 0) {
+  //           configService.setConfig(config)
+  //         } else {
+  //           const { key, value, allowed } = invalid[0]
+  //           loggingService.warn(
+  //             `invalid value "${value}" for ${key}. Allowed: ${allowed}.`
+  //           )
+  //         }
+  //       }
+  //       return config
+  //     })
+  //     .catch(error => {
+  //       loggingService.warn('failed fetching config:', error)
+  //     })
+  // }
+  //
+  // _sendPageLoadMetrics() {
+  //   /**
+  //    * Name of the transaction is set in transaction service to
+  //    * avoid duplicating the logic at multiple places
+  //    */
+  //   const tr = this.startTransaction(undefined, PAGE_LOAD, {
+  //     managed: true,
+  //     canReuse: true
+  //   })
+  //
+  //   if (!tr) {
+  //     return
+  //   }
+  //
+  //   tr.addTask(PAGE_LOAD)
+  //   const sendPageLoadMetrics = () => {
+  //     // to make sure PerformanceTiming.loadEventEnd has a value
+  //     setTimeout(() => tr.removeTask(PAGE_LOAD))
+  //   }
+  //
+  //   if (document.readyState === 'complete') {
+  //     sendPageLoadMetrics()
+  //   } else {
+  //     window.addEventListener('load', sendPageLoadMetrics)
+  //   }
+  // }
 
   isEnabled() {
     return !this._disable
@@ -268,11 +266,11 @@ export default class ApmBase {
     }
   }
 
-  captureError(error) {
-    if (this.isEnabled()) {
-      var errorLogging = this.serviceFactory.getService('ErrorLogging')
-      return errorLogging.logError(error)
-    }
+  captureError() {
+    // if (this.isEnabled()) {
+    //   var errorLogging = this.serviceFactory.getService('ErrorLogging')
+    //   return errorLogging.logError(error)
+    // }
   }
 
   addFilter(fn) {

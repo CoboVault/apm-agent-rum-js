@@ -45,8 +45,6 @@
  *
  */
 
-import { isBrowser } from './utils'
-
 /**
  * Add default ports for other protocols(ws, wss) after
  * RUM agent starts instrumenting those
@@ -131,8 +129,7 @@ export class Url {
       /**
        * Default values for all keys from location if url is relative
        */
-      this[key] =
-        this[key] || (relative && instruction[3] ? location[key] || '' : '')
+      this[key] = this[key] || ''
       /**
        * host should be lowercased so they can be used to
        * create a proper `origin`.
@@ -198,12 +195,7 @@ export class Url {
   }
 
   getLocation() {
-    var globalVar = {}
-    if (isBrowser) {
-      globalVar = window
-    }
-
-    return globalVar.location
+    return '/'
   }
 
   extractProtocol(url) {

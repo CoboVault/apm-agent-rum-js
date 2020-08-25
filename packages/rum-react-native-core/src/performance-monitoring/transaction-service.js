@@ -37,7 +37,6 @@ import {
   getLatestNonXHRSpan,
   isPerfTypeSupported
 } from '../common/utils'
-import { captureNavigation } from './capture-navigation'
 import {
   PAGE_LOAD,
   NAME_UNKNOWN,
@@ -54,7 +53,6 @@ import {
 } from '../common/constants'
 import { addTransactionContext } from '../common/context'
 import { __DEV__, state } from '../state'
-import { slugifyUrl } from '../common/url'
 
 class TransactionService {
   constructor(logger, config) {
@@ -244,7 +242,7 @@ class TransactionService {
      * Capturing it here before scheduling the transaction end
      * as to avoid capture different location when routed
      */
-    const currentUrl = window.location.href
+    // const currentUrl = window.location.href
 
     return Promise.resolve().then(
       () => {
@@ -307,11 +305,11 @@ class TransactionService {
         /**
          * Categorize the transaction based on the current location
          */
-        if (tr.name === NAME_UNKNOWN) {
-          tr.name = slugifyUrl(currentUrl)
-        }
-
-        captureNavigation(tr)
+        // if (tr.name === NAME_UNKNOWN) {
+        //   tr.name = slugifyUrl(currentUrl)
+        // }
+        //
+        // captureNavigation(tr)
 
         /**
          * Adjust transaction start time with span timings and

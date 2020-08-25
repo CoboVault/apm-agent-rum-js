@@ -25,7 +25,6 @@
 
 // export public core APIs.
 
-import { registerServices as registerErrorServices } from './error-logging'
 import { registerServices as registerPerfServices } from './performance-monitoring'
 import { ServiceFactory } from './common/service-factory'
 import {
@@ -49,7 +48,8 @@ import { createTracer } from './opentracing'
 
 function createServiceFactory() {
   registerPerfServices()
-  registerErrorServices()
+  // should try to catch native error
+  // registerErrorServices()
   const serviceFactory = new ServiceFactory()
   return serviceFactory
 }

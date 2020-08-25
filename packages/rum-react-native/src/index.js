@@ -25,9 +25,8 @@
 
 import {
   createServiceFactory,
-  bootstrap,
-  isBrowser
-} from '@elastic/apm-rum-core'
+  bootstrap
+} from '@elastic/apm-rum-react-native-core'
 import ApmBase from './apm-base'
 
 /**
@@ -35,16 +34,13 @@ import ApmBase from './apm-base'
  * including the instanes used in framework specific integrations
  */
 function getApmBase() {
-  if (isBrowser && window.elasticApm) {
+  if (window.elasticApm) {
     return window.elasticApm
   }
   const enabled = bootstrap()
   const serviceFactory = createServiceFactory()
   const apmBase = new ApmBase(serviceFactory, !enabled)
-
-  if (isBrowser) {
-    window.elasticApm = apmBase
-  }
+  window.elasticApm = apmBase
 
   return apmBase
 }
