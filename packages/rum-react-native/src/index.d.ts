@@ -23,7 +23,7 @@
  *
  */
 
-declare module '@elastic/apm-rum-react-native' {
+declare module '@cobo/apm-rum-react-native' {
   type Init = (options?: AgentConfigOptions) => ApmBase
   const init: Init
 
