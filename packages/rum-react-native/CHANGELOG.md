@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0 (2020-08-25)
+
+
+### Features
+
+* **dev:** add react-native ([e50d5eb](https://github.com/CoboVault/apm-agent-rum-js/commit/e50d5ebb080faa357c938c05a73ec20c4aa6c930))
+* **dev:** adjust code for react-native usage ([000e75b](https://github.com/CoboVault/apm-agent-rum-js/commit/000e75b071db6830cd15318bb8f51080e8ffd442))
+* **dev:** remove useless packages ([0b47191](https://github.com/CoboVault/apm-agent-rum-js/commit/0b47191b8f9e038291f19283d5ea28b07b0704b6))
+
+
+
+
+
 # [5.5.0](https://github.com/elastic/apm-agent-rum-js/compare/@elastic/apm-rum@5.4.0...@elastic/apm-rum@5.5.0) (2020-08-18)
 
 

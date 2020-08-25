@@ -1,6 +1,6 @@
 {
   "name": "@cobo/apm-rum-react-native-core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Elastic apm core",
   "license": "MIT",
   "main": "dist/lib/index.js",
