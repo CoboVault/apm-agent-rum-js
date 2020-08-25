@@ -27,7 +27,7 @@ import {
   getInstrumentationFlags,
   CONFIG_SERVICE,
   LOGGING_SERVICE
-} from '@elastic/apm-rum-react-native-core'
+} from '@cobo/apm-rum-react-native-core'
 
 export default class ApmBase {
   constructor(serviceFactory, disable) {

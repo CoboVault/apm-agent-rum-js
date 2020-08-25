@@ -10,7 +10,7 @@
   "scripts": {
     "version": "node scripts/prompt-release",
     "prerelease": "npm test && npm run clean",
-    "release": "lerna publish && npm run github-release",
+    "release": "lerna publish",
     "release-package": "node scripts/publish-package",
     "github-release": "node scripts/github-release",
     "build-docs": "PREVIEW=1 sh ./scripts/build_docs.sh apm-agent-rum-js ./docs ./build",

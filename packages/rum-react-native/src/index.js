@@ -26,7 +26,7 @@
 import {
   createServiceFactory,
   bootstrap
-} from '@elastic/apm-rum-react-native-core'
+} from '@cobo/apm-rum-react-native-core'
 import ApmBase from './apm-base'
 
 /**
