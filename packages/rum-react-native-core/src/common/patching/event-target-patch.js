@@ -40,13 +40,13 @@ for (let i = 0; i < eventTypes.length; i++) {
   eventTypeSymbols[et] = apmSymbol(et)
 }
 
-function shouldInstrumentEvent(target, eventType, listenerFn) {
-  return (
-    target instanceof Element &&
-    eventTypes.indexOf(eventType) >= 0 &&
-    typeof listenerFn === 'function'
-  )
-}
+// function shouldInstrumentEvent(target, eventType, listenerFn) {
+//   return (
+//     target instanceof Element &&
+//     eventTypes.indexOf(eventType) >= 0 &&
+//     typeof listenerFn === 'function'
+//   )
+// }
 
 export function patchEventTarget(callback) {
   if (!window.EventTarget) {
@@ -174,9 +174,9 @@ export function patchEventTarget(callback) {
     optionsOrCapture
   ) {
     const target = this
-    if (!shouldInstrumentEvent(target, eventType, listenerFn)) {
-      return nativeAddEventListener.apply(target, arguments)
-    }
+    // if (!shouldInstrumentEvent(target, eventType, listenerFn)) {
+    //   return nativeAddEventListener.apply(target, arguments)
+    // }
 
     const wrappingListenerFn = createListenerWrapper(
       target,
@@ -197,9 +197,9 @@ export function patchEventTarget(callback) {
     optionsOrCapture
   ) {
     const target = this
-    if (!shouldInstrumentEvent(target, eventType, listenerFn)) {
-      return nativeRemoveEventListener.apply(target, arguments)
-    }
+    // if (!shouldInstrumentEvent(target, eventType, listenerFn)) {
+    //   return nativeRemoveEventListener.apply(target, arguments)
+    // }
 
     let wrappingFn = getWrappingFn(
       target,
