@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@cobo/apm-rum-react-native-core@0.1.0...@cobo/apm-rum-react-native-core@0.2.0) (2020-09-01)
+
+
+### Features
+
+* **dev:** adjust dev environment ([dc07e1a](https://github.com/CoboVault/apm-agent-rum-js/commit/dc07e1a4e3d5c28cd0270e150f271ef39a2c575e))
+
+
+
+
+
 # 0.1.0 (2020-08-25)
 
 
