@@ -125,7 +125,8 @@ class ApmServer {
     { timeout, payload, headers } = { timeout: 10000 }
   ) {
     return new Promise(function(resolve, reject) {
-      var xhr = new window.XMLHttpRequest()
+      //use RN XMLHttpRequest
+      var xhr = new XMLHttpRequest()
       xhr[XHR_IGNORE] = true
       xhr.open(method, url, true)
       xhr.timeout = timeout

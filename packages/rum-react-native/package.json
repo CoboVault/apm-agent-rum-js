@@ -37,7 +37,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@cobo/apm-rum-react-native-core": "file:../rum-react-native-core",
+    "@cobo/apm-rum-react-native-core": "^0.2.0",
     "opentracing": "^0.14.3"
   },
   "bundlesize": [
