@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@cobo/apm-rum-react-native-core@0.3.0...@cobo/apm-rum-react-native-core@0.4.0) (2020-09-08)
+
+
+### Features
+
+* **dev:** remove XMLHttpRequest timeout to fix android crash ([cc8c1e4](https://github.com/CoboVault/apm-agent-rum-js/commit/cc8c1e4fa1ab58fed0a9d8e33efc24f3bf5045ef))
+
+
+
+
+
 # [0.3.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@cobo/apm-rum-react-native-core@0.2.0...@cobo/apm-rum-react-native-core@0.3.0) (2020-09-08)
 
 
