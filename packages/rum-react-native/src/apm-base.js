@@ -46,7 +46,7 @@ export default class ApmBase {
       /**
        * Set Agent version to be sent as part of metadata to the APM Server
        */
-      configService.setVersion('0.4.0')
+      configService.setVersion('0.5.0')
       this.config(config)
       /**
        * Set level here to account for both active and inactive cases
