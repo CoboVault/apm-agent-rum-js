@@ -119,17 +119,13 @@ class ApmServer {
     return new Error(message)
   }
 
-  _makeHttpRequest(
-    method,
-    url,
-    { timeout, payload, headers } = { timeout: 10000 }
-  ) {
+  _makeHttpRequest(method, url, { payload, headers } = {}) {
     return new Promise(function(resolve, reject) {
-      //use RN XMLHttpRequest
       var xhr = new XMLHttpRequest()
       xhr[XHR_IGNORE] = true
       xhr.open(method, url, true)
-      xhr.timeout = timeout
+      // RN XMLHttpRequest doesn't implement timeout;
+      // xhr.timeout = timeout
 
       if (headers) {
         for (var header in headers) {
