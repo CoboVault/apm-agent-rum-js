@@ -132,8 +132,8 @@ function checkSameOrigin(source, target) {
 }
 
 function isPlatformSupported() {
-  const GLOBAL = global || window
-  return GLOBAL && GLOBAL.ReactNative && GLOBAL.ReactNative.NativeModules
+  // const GLOBAL = global || window
+  return true
 }
 
 /**
