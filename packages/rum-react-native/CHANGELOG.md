@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/CoboVault/apm-agent-rum-js/compare/@cobo/apm-rum-react-native@0.5.1...@cobo/apm-rum-react-native@0.5.2) (2020-11-24)
+
+**Note:** Version bump only for package @cobo/apm-rum-react-native
+
+
+
+
+
 ## [0.5.1](https://github.com/CoboVault/apm-agent-rum-js/compare/@cobo/apm-rum-react-native@0.5.0...@cobo/apm-rum-react-native@0.5.1) (2020-09-08)
 
 **Note:** Version bump only for package @cobo/apm-rum-react-native
