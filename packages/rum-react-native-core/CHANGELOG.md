@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@cobo/apm-rum-react-native-core@0.5.0...@cobo/apm-rum-react-native-core@0.6.0) (2020-11-24)
+
+
+### Features
+
+* **dev:** modify ([c21cc50](https://github.com/CoboVault/apm-agent-rum-js/commit/c21cc50bdc9b4df4bbc7126a38c88bf74b93f17a))
+* **dev:** modify ([bee28e8](https://github.com/CoboVault/apm-agent-rum-js/commit/bee28e8fcfe2aecd86e33319379c8171a47c152e))
+
+
+
+
+
 # [0.5.0](https://github.com/CoboVault/apm-agent-rum-js/compare/@cobo/apm-rum-react-native-core@0.4.0...@cobo/apm-rum-react-native-core@0.5.0) (2020-11-24)
 
 
