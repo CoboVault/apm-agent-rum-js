@@ -18,7 +18,6 @@
     "prepublishOnly": "npm run build",
     "build": "run-p build:main build:module build:umd",
     "build:main": "BABEL_ENV=BROWSER_PROD npx babel src -d dist/lib",
-    "build:module": "BABEL_ENV=BROWSER_ESM_PROD npx babel src -d dist/es",
     "build:umd": "webpack --colors",
     "build:e2e": "npm run script buildE2eBundles packages/rum/test/e2e",
     "bundlesize": "npm run build:umd && bundlesize",
@@ -37,7 +36,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@cobo/apm-rum-react-native-core": "^0.5.0",
+    "@cobo/apm-rum-react-native-core": "file:../rum-react-native-core",
     "opentracing": "^0.14.3"
   },
   "bundlesize": [
